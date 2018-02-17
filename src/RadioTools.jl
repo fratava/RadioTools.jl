@@ -1,5 +1,14 @@
+__precompile__()
+
 module RadioTools
 
-# package code goes here
+#Constants
+include("constants.jl")
+#Convertion
+include("convert.jl")
+#functions
+include("functions.jl")
 
-end # module
+
+
+end
