@@ -10,5 +10,9 @@ function angulares(λ, D; arcs = true)
     return θ
 end
 
+function rms(λ)
+    return 0.03 * λ
+end
 
-export angulares
+
+export angulares, rms
