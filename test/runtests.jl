@@ -1,5 +1,6 @@
 using RadioTools
 using Base.Test
 
-# write your own tests here
-@test 1 == 2
+# Test
+@testset "Angular resolution" begin include("angulares.jl") end
+@testset "rms" begin include("rms.jl") end
