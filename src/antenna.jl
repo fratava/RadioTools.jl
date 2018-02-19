@@ -15,4 +15,4 @@ function rms(λ)
 end
 
 
-#export angulares, rms
+export angulares, rms
