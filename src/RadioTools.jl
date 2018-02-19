@@ -6,13 +6,6 @@ module RadioTools
 include("constants.jl")
 #Convertion
 include("convert.jl")
-#Antenna
-include("antenna.jl")
-
-export angulares, rms
-
-#Physics
-include("physics.jl")
 
 export fre2wl, wl2fre,
        m2cm,
@@ -21,5 +14,13 @@ export fre2wl, wl2fre,
        hz2ghz, hz2mhz,
        ghz2hz, mhz2hz,
        arcs2dg
+
+#Antenna
+include("antenna.jl")
+
+export angulares, rms
+
+#Physics
+include("physics.jl")
 
 end
