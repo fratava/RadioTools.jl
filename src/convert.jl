@@ -48,10 +48,10 @@ function arcs2dg(arcs)
        return arcs * 0.00028
 end
 
-export fre2wl, wl2fre,
-       m2cm,
-       mm2cm, mm2m, mm2um
-       cm2m, cm2mm,
-       hz2ghz, hz2mhz,
-       ghz2hz, mhz2hz,
-       arcs2dg
+#export fre2wl, wl2fre,
+#       m2cm,
+#       mm2cm, mm2m, mm2um
+#       cm2m, cm2mm,
+#       hz2ghz, hz2mhz,
+#       ghz2hz, mhz2hz,
+#       arcs2dg
