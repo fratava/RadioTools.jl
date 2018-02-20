@@ -1,52 +1,25 @@
 include("constants.jl")
 
-fre2wl(ν) = c / ν #cm
-wl2fre(λ) = c / λ #Hz
+#λν = c
+fre2wl(ν)    = c / ν #cm
+wl2fre(λ)    = c / λ #Hz
 
 #Distance
-function m2cm(m)
-       return m   * 100
-end
+m2cm(m)      = m   * 100
+mm2cm(mm)    = mm  * 0.1
+mm2m(mm)     = mm  * 0.001
+mm2um(mm)    = mm  * 1000
+cm2m(cm)     = cm  * 0.01
+cm2mm(cm)    = cm  * 10
 
-function mm2cm(mm)
-       return mm  * 0.1
-end
-
-function mm2m(mm)
-       return mm  * 0.001
-end
-
-function mm2um(mm)
-       return mm  * 1000
-end
-
-function cm2m(cm)
-       return cm  * 0.01
-end
-
-function cm2mm(cm)
-       return cm  * 10
-end
 #Frequency
-function hz2ghz(hz)
-       return hz  / 1e9
-end
+hz2ghz(hz)   = hz  / 1e9
+hz2mhz(hz)   = hz  / 1e6
+ghz2hz(ghz)  = ghz * 1e9
+mhz2hz(mhz)  = mhz * 1e6
 
-function hz2mhz(hz)
-       return hz  / 1e6
-end
-
-function ghz2hz(ghz)
-       return ghz * 1e9
-end
-
-function mhz2hz(mhz)
-       return mhz * 1e6
-end
 #Angle
-function arcs2dg(arcs)
-       return arcs * 0.00028
-end
+arcs2dg(arcs) = arcs * 0.00028
 
 export fre2wl, wl2fre,
        m2cm,
