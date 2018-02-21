@@ -1,7 +1,7 @@
 #CGS
 
 const c           = 2.997924561e10 #cm s⁻¹
-const au          = 1.49597892e12  #cm
+const au          = 1.49597892e13  #cm
 const solar_mass  = 1.989e33       #g
 const solar_lum   = 3.826e33       #erg s⁻¹
 const solar_radio = 6.9598e10      #cm
