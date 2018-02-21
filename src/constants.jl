@@ -13,3 +13,6 @@ const ly          = 9.46073047e17  #cm
 const Jy          = 1e-23          #erg cm⁻² s⁻¹ Hz⁻¹
 const sfu         = 1e-19          #erg cm⁻² s⁻¹ Hz⁻¹
 const σ           = 5.6696196e-5   #erg cm⁻² s⁻¹ K⁻⁴
+
+export c, au, solar_mass, solar_lum, solar_radio,
+       h, k_b, pc, Mpc, ly, Jy, sfu, σ
