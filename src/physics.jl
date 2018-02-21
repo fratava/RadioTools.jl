@@ -12,8 +12,8 @@ function intensity_wl(λ,T)
 end
 
 #Flux
-function flux_ll(R,r,λ,T)
-    f_ll = (R / r)^2 * π * intensity_fq(λ,T)
+function flux_ll(R,r,ν,T)
+    f_ll = (R / r)^2 * π * intensity_fq(ν,T)
     return f_ll
 end
 
