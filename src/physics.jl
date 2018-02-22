@@ -28,4 +28,4 @@ function flux_obs_dnu(Δν,R,r,ν,T)
 end
 
 export intensity_fq, intensity_wl,
-       flux_ll, flux_obs, flux_obs_df
+       flux_ll, flux_obs, flux_obs_dnu
