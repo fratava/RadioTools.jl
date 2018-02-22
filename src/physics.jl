@@ -17,14 +17,14 @@ function flux_ll(R,r,ν,T)
     return f_ll
 end
 
-function flux_obs(A,R,r,λ,T)
-    f_obs = A * flux_ll(R,r,λ,T)
+function flux_obs(A,R,r,ν,T)
+    f_obs = A * flux_ll(R,r,ν,T)
     return f_obs
 end
 
-function flux_obs_df(Δλ,R,r,λ,T)
-    f_obs = flux_ll(R,r,λ,T) * Δλ
-    return f_obs
+function flux_obs_dnu(Δν,R,r,ν,T)
+    f_obs_nu = flux_ll(R,r,λ,T) * Δν
+    return f_obs_nu
 end
 
 export intensity_fq, intensity_wl,
