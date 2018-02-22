@@ -23,7 +23,7 @@ function flux_obs(A,R,r,ν,T)
 end
 
 function flux_obs_dnu(Δν,R,r,ν,T)
-    f_obs_nu = flux_ll(R,r,λ,T) * Δν
+    f_obs_nu = flux_ll(R,r,ν,T) * Δν
     return f_obs_nu
 end
 
