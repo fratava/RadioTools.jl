@@ -10,5 +10,7 @@ include("convert.jl")
 include("antenna.jl")
 #Physics
 include("physics.jl")
+#Flux
+include("flux.jl")
 
 end

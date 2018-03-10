@@ -1,31 +1,40 @@
 include("constants.jl")
 
+#Plank law
+function plank(ν,T)
+    b_nu = ((2 * h * ν.^3)/(c^2)) .* (1 / ( exp( (h * c) / (k_b + T) ) - 1))
+    return b_nu
+end
+
 #Intensity
-function intensity_fq(ν,T)
-    I_λ= (2 * ν^2 * k_b * T) / (c^2)
-    return I_λ
+function intensity(n, T, I0)
+    I = [I0]
+
+    for i=2:n
+        I_temp = I[i-1] * exp(-τ(n,T)) + S(T) * (1 - exp(-τ(n,T)))
+        push!(I,I_temp)
+    end
+
+    return I
 end
 
-function intensity_wl(λ,T)
-    I_λ= (2 * c * k_b * T) ./ (λ.^4)
-    return I_λ
+#Opacity
+function κ(n,T)
+    return 1.0
 end
 
-#Flux
-function flux_ll(R,r,ν,T)
-    f_ll = (R / r)^2 * π * intensity_fq(ν,T)
-    return f_ll
+#Source function
+function S(T)
+    return 1.0
 end
 
-function flux_obs(A,R,r,ν,T)
-    f_obs = A * flux_ll(R,r,ν,T)
-    return f_obs
+#Optical depth
+function τ(n,T)
+    Δx = 0.1
+
+    τ1 = (Δx / 2) * ( κ(n,T) + κ(n,T) )
+
+    return τ1
 end
 
-function flux_obs_dnu(Δν,R,r,ν,T)
-    f_obs_nu = flux_ll(R,r,ν,T) * Δν
-    return f_obs_nu
-end
-
-export intensity_fq, intensity_wl,
-       flux_ll, flux_obs, flux_obs_dnu
+export plank, intensity, κ, S, τ
