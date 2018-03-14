@@ -7,7 +7,7 @@ function plank(ν,T)
 end
 
 #Intensity
-function intensity(n, ν, T, I0)
+function intensity(n, ν, T, I0; Δx = 0.1)
     I = [I0]
 
     for i=2:n
@@ -24,13 +24,12 @@ function κ(n,T)
 end
 
 #Source function
-function S(ν,T)
+function S(ν, T)
     return plank(ν,T)
 end
 
 #Optical depth
-function τ(n,T)
-    Δx = 0.1
+function τ(n,T; Δx = 0.1)
 
     τ1 = (Δx / 2) * ( κ(n,T) + κ(n,T) )
 
