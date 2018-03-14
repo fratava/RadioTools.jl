@@ -2,16 +2,16 @@ include("constants.jl")
 
 #Plank law
 function plank(ν,T)
-    b_nu = ((2 * h * ν.^3)/(c^2)) .* (1 / ( exp( (h * c) / (k_b + T) ) - 1))
+    b_nu = ((2 * h * ν.^3) / (c^2)) .* (1  ./ ( exp.( (h .* ν) / (k_b * T) ) - 1))
     return b_nu
 end
 
 #Intensity
-function intensity(n, T, I0)
+function intensity(n, ν, T, I0)
     I = [I0]
 
     for i=2:n
-        I_temp = I[i-1] * exp(-τ(n,T)) + S(T) * (1 - exp(-τ(n,T)))
+        I_temp = I[i-1] * exp(-τ(n,T)) + S(ν, T) * (1 - exp(-τ(n,T)))
         push!(I,I_temp)
     end
 
@@ -24,8 +24,8 @@ function κ(n,T)
 end
 
 #Source function
-function S(T)
-    return 1.0
+function S(ν,T)
+    return plank(ν,T)
 end
 
 #Optical depth
