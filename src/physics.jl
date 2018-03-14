@@ -2,7 +2,7 @@ include("constants.jl")
 
 #Plank law
 function plank(ν,T)
-    b_nu = ((2 * h * ν.^3) / (c^2)) .* (1  ./ ( exp.( (h .* ν) / (k_b * T) ) - 1))
+    b_nu = ( (2 * h * ν.^3) / (c^2)) .* (1 ./ ( exp.( (h .* ν) / (k_b * T) ) - 1))
     return b_nu
 end
 
