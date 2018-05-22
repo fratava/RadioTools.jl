@@ -34,7 +34,7 @@ function S(ν, T)
 end
 
 #Optical depth
-function τ(N, T, ν; Δx = 0.1)
+function τ(N, T, ν; Δx = 0.01)
 
     τ1 = (Δx / 2) * ( κ(N[1], T[1], ν) + κ(N[2], T[2], ν) )
 
