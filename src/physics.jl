@@ -14,9 +14,8 @@ function intensity(N, ν, T, D, I0)
 
     for i=2:length(N)
 
-        ttemp = τ([N[i-1] N[i]],[T[i-1] T[i]])
-
         Δx  = D[i] - D[i-1]
+        temp = τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)
         push!(tau, ttemp)
 
         I_temp = I[i-1] * exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)) +
