@@ -36,7 +36,7 @@ function S(ν, T)
 end
 
 #Optical depth
-function τ(N, T, ν, opacity; Δx = 1e2)
+function τ(N, T, ν, opacity; Δx = 1e3)
 
     τ1 = (Δx * 5e4) * ( κ(N[1], T[1], ν, opacity) + κ(N[2], T[2], ν, opacity) )
 
