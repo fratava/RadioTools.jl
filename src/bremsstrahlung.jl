@@ -22,7 +22,7 @@ function bremsstrahlung(N, T, ν)
     #κ2 = 1.3705e-35 * T^(0.5) * Ne * Ne * ν^(-3) * (1 - exp(-heV * ν / (keV * T) )) * gaunt
     #κ = 3.7e8 * T^(0.5) * Ne * HeIII * ν^(-3) * (1 - exp(-heV * ν / (keV * T) )) * gaunt
 
-    return k
+    return κ
 end
 
 export bremsstrahlung
