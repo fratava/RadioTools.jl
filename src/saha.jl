@@ -73,7 +73,7 @@ function saha(T,N;ionization = false)
     if ionization == true
         return [AHI,AHII,AHeI,AHeII,AHeIII,ANe]
     else
-        return ANe, AHII
+        return ANe, AHI, AHII, AHeI, AHeII, AHeIII
     end
 end
 
