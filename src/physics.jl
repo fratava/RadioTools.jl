@@ -1,4 +1,5 @@
 include("constants.jl")
+include("bremsstrahlung.jl")
 
 #Plank law
 function plank(ν,T)
@@ -7,11 +8,11 @@ function plank(ν,T)
 end
 
 #Intensity
-function intensity(n, ν, T, I0; Δx = 0.1)
+function intensity(N, ν, T, I0; Δx = 0.1)
     I = [I0]
 
-    for i=2:n
-        I_temp = I[i-1] * exp(-τ(n,T)) + S(ν, T) * (1 - exp(-τ(n,T)))
+    for i=2:10
+        I_temp = I[i-1] * exp(-τ(N,T)) + S(ν, T) * (1 - exp(-τ(N,T)))
         push!(I,I_temp)
     end
 
@@ -19,8 +20,12 @@ function intensity(n, ν, T, I0; Δx = 0.1)
 end
 
 #Opacity
-function κ(n,T)
-    return 1.0
+function κ(N,T,ν; opacity = true)
+    if opacity == true
+        return bremsstrahlung(N, T ,ν)
+    else
+        return 1.0
+    end
 end
 
 #Source function
@@ -29,9 +34,9 @@ function S(ν, T)
 end
 
 #Optical depth
-function τ(n,T; Δx = 0.1)
+function τ(N, T, ν; Δx = 0.1)
 
-    τ1 = (Δx / 2) * ( κ(n,T) + κ(n,T) )
+    τ1 = (Δx / 2) * ( κ(N-1e3, T-500, ν) + κ(N, T, ν) )
 
     return τ1
 end
