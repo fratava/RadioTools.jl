@@ -8,6 +8,7 @@ const solar_radio = 6.9598e10        #cm
 const h           = 6.62619650e-27   #erg s
 const heV         = 4.1356674335e-15 #eV
 const keV         = 8.617342e-5      #eV
+const ζ           = 1.78107241799
 const k_b         = 1.38064852e-16   #erg K⁻¹
 const pc          = 3.085677582e18   #cm
 const Mpc         = 3.085677582e24   #cm

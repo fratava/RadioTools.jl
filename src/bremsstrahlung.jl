@@ -5,7 +5,9 @@ function bremsstrahlung(N, T, ν)
 
     #A = 0
 
-    gaunt = 1.0
+    #gaunt = 1.0
+
+    gaunt= (sqrt(3) / π)* log((4.0 / ζ)*((keV * T) / (heV* ν)))
 
     Ne , HI, HII, HeI, HeII, HeIII = saha(T, N)
 
