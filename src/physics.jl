@@ -9,18 +9,22 @@ end
 
 #Intensity
 function intensity(N, ν, T, D, I0)
-    I = [I0]
+    I   = [I0]
+    tau = []
 
     for i=2:length(N)
 
-        Δx = D[i] - D[i-1]
+        ttemp = τ([N[i-1] N[i]],[T[i-1] T[i]]
+
+        Δx  = D[i] - D[i-1]
+        push!(tau, ttemp)
 
         I_temp = I[i-1] * exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)) +
                  S(ν, T[i]) * (1 - exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)))
         push!(I,I_temp)
     end
 
-    return I
+    return I, tau
 end
 
 #Opacity
@@ -40,7 +44,6 @@ end
 #Optical depth
 function τ(N, T, ν, Δx)
 
-    #τ1 = (Δx * 5e4) * ( κ(N[1], T[1], ν) + κ(N[2], T[2], ν) )
     τ1 = (Δx/2 * 1e5) * ( κ(N[1], T[1], ν) + κ(N[2], T[2], ν) )
 
     return τ1
