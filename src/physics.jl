@@ -13,7 +13,7 @@ function intensity(N, ν, T, D, I0)
 
     for i=2:length(N)
 
-        Δx = D[i,2] - D[i-1,2]
+        Δx = D[i] - D[i-1]
 
         I_temp = I[i-1] * exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)) +
                  S(ν, T[i]) * (1 - exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)))
