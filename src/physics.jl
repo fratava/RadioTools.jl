@@ -8,10 +8,10 @@ function plank(ν,T)
 end
 
 #Intensity
-function intensity(N, ν, T, I0)
+function intensity(N, ν, T, D, I0)
     I = [I0]
 
-    Δx = data[i,2] - data[i-1,2]
+    Δx = D[i,2] - D[i-1,2]
 
     for i=2:length(N)
         I_temp = I[i-1] * exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)) +
