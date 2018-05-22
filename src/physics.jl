@@ -11,9 +11,10 @@ end
 function intensity(N, ν, T, D, I0)
     I = [I0]
 
-    Δx = D[i,2] - D[i-1,2]
-
     for i=2:length(N)
+
+        Δx = D[i,2] - D[i-1,2]
+
         I_temp = I[i-1] * exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)) +
                  S(ν, T[i]) * (1 - exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)))
         push!(I,I_temp)
