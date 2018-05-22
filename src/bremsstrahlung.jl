@@ -7,7 +7,7 @@ function bremsstrahlung(N, T, ν)
     Ne = saha(T, N)
 
     if T < 2e5
-        A = 18.2 + log(t^(3/2)) - log(nu)
+        A = 18.2 + log(T^(3/2)) - log(nu)
     else
         A = 24.5 + log(t) - log(nu)
     end
