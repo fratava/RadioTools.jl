@@ -8,7 +8,7 @@ function plank(ν,T)
 end
 
 #Intensity
-function intensity(N, ν, T, I0; opacity = true, Δx = 0.1)
+function intensity(N, ν, T, I0, opacity; Δx = 0.1)
     I = [I0]
 
     for i=2:length(N)
@@ -22,7 +22,7 @@ function intensity(N, ν, T, I0; opacity = true, Δx = 0.1)
 end
 
 #Opacity
-function κ(N,T,ν; opacity = true)
+function κ(N,T,ν, opacity)
     if opacity == true
         return bremsstrahlung(N, T ,ν)
     else
@@ -36,7 +36,7 @@ function S(ν, T)
 end
 
 #Optical depth
-function τ(N, T, ν; opacity = true, Δx = 0.01)
+function τ(N, T, ν, opacity; Δx = 0.01)
 
     τ1 = (Δx / 2) * ( κ(N[1], T[1], ν, opacity) + κ(N[2], T[2], ν, opacity) )
 
