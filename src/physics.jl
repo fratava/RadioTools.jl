@@ -10,6 +10,7 @@ end
 #Intensity
 function intensity(N, ν, T, D, I0)
     I   = [I0]
+    Iν  = 0
     tau = []
 
     for i=2:length(N)
@@ -20,10 +21,13 @@ function intensity(N, ν, T, D, I0)
 
         I_temp = I[i-1] * exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)) +
                  S(ν, T[i]) * (1 - exp(-τ([N[i-1] N[i]],[T[i-1] T[i]], ν, Δx)))
+
+        Iν = I_temp
         push!(I,I_temp)
     end
 
-    return I, tau
+    #return I, Iν, tau
+    return Iν
 end
 
 #Opacity
@@ -48,4 +52,9 @@ function τ(N, T, ν, Δx)
     return τ1
 end
 
-export plank, intensity, κ, S, τ
+#Temperature brightness
+function tb(I, ν)
+    return I * c^2 / (2 * k_b * ν^2)
+end
+
+export plank, intensity, κ, S, τ, TB
