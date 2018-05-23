@@ -57,4 +57,4 @@ function tb(I, ν)
     return I * c^2 / (2 * k_b * ν^2)
 end
 
-export plank, intensity, κ, S, τ, TB
+export plank, intensity, κ, S, τ, tb
