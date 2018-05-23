@@ -11,17 +11,19 @@ function intensity_wl(λ,T)
     return I_λ
 end
 
-#Flux
+#Flux received
 function flux_ll(R,r,ν,T)
     f_ll = (R / r)^2 * π * intensity_fq(ν,T)
     return f_ll
 end
 
+#Observed flux
 function flux_obs(A,R,r,ν,T)
     f_obs = A * flux_ll(R,r,ν,T)
     return f_obs
 end
 
+#Δν
 function flux_obs_dnu(Δν,R,r,ν,T)
     f_obs_nu = flux_ll(R,r,ν,T) * Δν
     return f_obs_nu
